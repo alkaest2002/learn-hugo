@@ -9,9 +9,11 @@
         <div>{{ .Content }}</div>
         {{ partial "book-chapters-paginator" . }}
       </div>
-      <div class="grow pt-9">
+      <div class="grow max-w-[30%] pt-9">
         <div class="p-6 rounded-lg bg-slate-200 ">
-          <h2 class="mb-1 font-3xl font-bold">Indice</h2>
+          <h2 class="mb-1 font-3xl font-bold">{{ T "stats" | title }}</h2>
+          {{ partial "base-stats" .  }}
+          <h2 class="mt-3 mb-1 font-3xl font-bold">{{ T "toc" | title }}</h2>
           {{ partial "book-toc" . }}
         </div>
       </div>

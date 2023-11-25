@@ -11,7 +11,7 @@ url: libro/introduzione/argomento-1
 
 ## Titolo 2.1
 
-{{< lorem 3 >}}
+{{< lorem 1 >}}
 
 ## Titolo 2.2
 
@@ -19,7 +19,7 @@ url: libro/introduzione/argomento-1
 
 ### Titolo 2.2.1
 
-{{< lorem 2 >}}
+{{< lorem 1 >}}
 
 ### Titolo 2.2.2
 
@@ -27,4 +27,4 @@ url: libro/introduzione/argomento-1
 
 # Titolo 3
 
-{{< lorem 3 >}}
+{{< lorem 2 >}}

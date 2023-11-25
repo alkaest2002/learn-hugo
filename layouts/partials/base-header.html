@@ -4,8 +4,9 @@
   </nav>
   <nav class="flex flex-wrap gap-1">
     {{ range site.Menus.main }}
+      {{ $is_active := $.Page.IsMenuCurrent .Menu . | or ($.Page.HasMenuCurrent .Menu .) }}
       <nav-item class="relative">
-        <a href="{{ .URL }}" class="py-3 px-5 font-bold rounded-full {{ if $.Page.IsMenuCurrent .Menu . }}bg-slate-300{{end}}">{{ .Name | title }}</a>
+        <a href="{{ .URL }}" class="py-3 px-5 font-bold rounded-full {{ if $is_active }}bg-slate-200{{ end }}">{{ .Name | title }}</a>
       </nav-item>
     {{ end }}
   </nav>

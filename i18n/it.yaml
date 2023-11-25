@@ -1,5 +1,5 @@
-book_syllabus:
-  other: sommario
+toc:
+  other: "sommario"
 
 copyright:
   other: "&#169; {{ .Year }} Tutti i diritti riservati."
@@ -12,3 +12,12 @@ next:
 
 pageOfPages:
   other: "pagina {{ .PageNumber }} di {{ .TotalPages }}"
+
+stats:
+  other: statistiche
+
+article_stats:
+  other: Quest'articolo ha circa <b>{{ .FuzzyWordCount }}</b> parole, per un tempo di lettura di circa <b>{{ .ReadingTime }}</b> minuti.
+
+categories:
+  other: categorie

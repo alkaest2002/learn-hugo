@@ -2,7 +2,7 @@
   <div>{{ partial "book-crumbs" . }}</div>
   <div class="mt-6">
     <h1 class="text-2xl font-bold mb-3">
-      {{ .Title }}
+      {{ T "toc" . | humanize }}
     </h1>
     {{ range sort .Pages ".File.Path" }}
       <a href="{{ .Permalink | safeHTML }}" class="block text-sky-800">{{ .Title }}</a>
