@@ -1,0 +1,24 @@
+main:
+  - name: Home
+    pageRef: /
+    weight: 10
+    params:
+      icon: home
+    
+  - name: Libro
+    pageRef: /book
+    weight: 30
+    params:
+      icon: blog
+
+  - name: ads
+    pageRef: /ads
+    weight: 30
+    params:
+      icon: blog
+  
+  - name: News
+    pageRef: /news
+    weight: 50
+    params:
+      icon: news

@@ -1,0 +1,8 @@
+{{- $ref := .Get "ref" | default (.Get 0) -}}
+{{- $bliboDB := site.Data.book_bibliography -}}
+
+{{- with index $bliboDB $ref }}
+  <span class="bibio-ref">{{ . }}</span>
+{{ else }}
+  <span class="bibio-ref font-bold text-red-700">REF?</span>
+{{ end }}

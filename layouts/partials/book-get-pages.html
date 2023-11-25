@@ -1,0 +1,2 @@
+{{ $pages := sort (where site.RegularPages "Section" "book") "File.Path" }}
+{{ return $pages }}

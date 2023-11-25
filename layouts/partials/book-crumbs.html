@@ -1,0 +1,11 @@
+<div class="flex gap-2">
+  {{ $root := T "book_syllabus" | title }}
+  {{- range after 1 .Ancestors.Reverse }}
+    <div>
+      <a href="{{ .RelPermalink }}" class="text-sky-800">{{ .Title }}</a> &rsaquo; 
+    </div>
+    {{- end }}
+    <div>
+      <span>{{ .LinkTitle }}</span>
+    </div>
+</div>

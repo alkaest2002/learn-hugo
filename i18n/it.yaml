@@ -1,0 +1,14 @@
+book_syllabus:
+  other: sommario
+
+copyright:
+  other: "&#169; {{ .Year }} Tutti i diritti riservati."
+
+prev:
+  other: "precendente"
+
+next:
+  other: "successivo"
+
+pageOfPages:
+  other: "pagina {{ .PageNumber }} di {{ .TotalPages }}"

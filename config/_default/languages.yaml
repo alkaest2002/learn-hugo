@@ -1,0 +1,14 @@
+it:
+  title: Hugo
+  contentDir: content/it
+  disabled: false
+  languageCode: it-IT
+  languageDirection: ltr
+  languageName: ITA
+  paginatePath: pagina
+  weight: 1
+  permalinks:
+    section:
+      news: notizie/:slug
+      book: libro/:slug
+    

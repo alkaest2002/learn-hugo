@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div>{{ partial "book-crumbs" . }}</div>
+  <article >
+    <div class="mt-6">
+      <h1 class="text-2xl font-bold">{{ .Title }}</h1>
+    </div>
+    <div class="flex flex-wrap gap-9">
+      <div class="md:basis-2/3">
+        <div>{{ .Content }}</div>
+        {{ partial "book-chapters-paginator" . }}
+      </div>
+      <div class="grow pt-9">
+        <div class="p-6 rounded-lg bg-slate-200 ">
+          <h2 class="mb-1 font-3xl font-bold">Indice</h2>
+          {{ partial "book-toc" . }}
+        </div>
+      </div>
+    </div>
+  </article>
+{{ end }}

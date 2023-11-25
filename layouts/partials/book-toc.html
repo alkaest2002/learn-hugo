@@ -1,0 +1,14 @@
+{{ define "toc" }}
+  {{ range .Headings }}
+    <div class="pl-3">
+      <a href="#{{ anchorize .ID }}" class="text-sky-800">{{ .Title }}</a>
+      {{ if .Headings }}
+        {{ template "toc" . }}
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
+
+<nav>
+  {{ template "toc" .Fragments }}
+</nav>

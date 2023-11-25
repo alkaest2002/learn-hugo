@@ -1,0 +1,20 @@
+
+{{ define "main" }}
+  <div>
+    {{ $paginator := .Paginate (sort .RegularPages "File.Path") 18 }}
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-5 auto-rows-max">
+      {{ range $paginator.Pages }}
+        {{ $teaser := index (.Resources.ByType "image") 0 }}
+        {{ $teaser := $teaser.Resize "150x"}}
+        {{ $filter := slice }}
+        <a href="{{ .Permalink | safeHTML }}" alt="{{ .Title }}" class="block flex flex-col border rounded-lg border-slate-300 bg-white hover:text-sky-800">
+          <img src="{{ $teaser.Permalink }}" alt="ads-{{ $.Title }}" class="block rounded-t-lg">
+          <div class="flex h-full p-1 px-3">
+            <p class="self-end font-bold">{{ .Title }}</p>
+          </div>
+        </a>
+      {{ end }}
+  </div>
+    {{ partial "base-paginator" $paginator }}
+  </div>
+{{ end }}

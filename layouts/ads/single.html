@@ -1,0 +1,13 @@
+{{ define "main" }}
+  {{ $teaser := index (.Resources.ByType "image") 0 }}
+  {{ $teaser := $teaser.Resize "500x"}}
+  {{ $filter := slice }}
+  <div class="flex flex-wrap">
+    <div>
+      <img src="{{ $teaser.Permalink }}" alt="ads-{{ $.Title }}">
+    </div>
+    <div>
+      {{ . | jsonify }}
+    </div>
+  </div>
+{{ end }}

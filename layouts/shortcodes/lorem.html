@@ -1,0 +1,10 @@
+{{- $count := .Get "count" | default (.Get 0) | default 1 -}}
+{{- $lorem := slice "Lorem ipsum dolor sit amet, consectetur adipiscing elit." "Curabitur cursus congue libero, nec malesuada nisl ultricies eget. Interdum et malesuada fames ac ante ipsum primis in faucibus." "Morbi sed neque eget dui accumsan euismod mollis vel arcu. Proin vel sodales lacus. Nullam egestas, arcu in sollicitudin iaculis, leo ante commodo dolor, et dignissim dolor justo quis risus. Integer at erat vestibulum, tristique nunc id, tincidunt risus. " "Proin tincidunt convallis risus nec efficitur. Aliquam convallis lectus consequat, lobortis erat eget, ultricies justo. Etiam tristique magna sem, nec laoreet diam pellentesque sed. Maecenas cursus faucibus lorem, sit amet luctus enim aliquam non." -}}
+{{- range seq $count}}
+<p class="lorem">
+  {{- range $index := seq 0 (index (shuffle (seq 0 3) ) 0 ) -}}
+    {{ index $lorem $index }}&nbsp;
+  {{- end -}}
+</p>
+{{- $lorem = shuffle $lorem -}}
+{{- end -}}

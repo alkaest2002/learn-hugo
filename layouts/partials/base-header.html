@@ -1,0 +1,12 @@
+<nav class="flex flex-wrap justify-between items-center p-3">
+  <nav>
+    <nav-item><h1 class="text-3xl">{{ site.Title }}</h1></nav-item>
+  </nav>
+  <nav class="flex flex-wrap gap-6 py-3 px-6 rounded-full bg-slate-200 drop-shadow">
+    {{ range (index .Site.Menus "main") }}
+      <nav-item>
+        <a href="{{ .URL }}" class="font-sans">{{ .Name | upper }}</a>
+      </nav-item>
+    {{ end }}
+  </nav>
+</nav>

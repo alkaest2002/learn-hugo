@@ -1,0 +1,13 @@
+
+{{ define "main" }}
+  {{ $paginator := .Paginate (sort .RegularPages "File.Path") 5 }}
+  <div>{{ partial "book-crumbs" . }}</div>
+  <div class="mt-6">
+    {{ range $paginator.Pages }}
+      <p>{{ .Title | markdownify }}</p>
+    {{ end }}
+  </div>
+  <div>
+    {{ partial "book-bibliography-paginator" (dict "ctx" . "paginator" $paginator) }}
+  </div>
+{{ end }}
