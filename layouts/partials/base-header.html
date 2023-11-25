@@ -1,11 +1,11 @@
 <nav class="flex flex-wrap justify-between items-center p-3">
   <nav>
-    <nav-item><h1 class="text-3xl">{{ site.Title }}</h1></nav-item>
+    <nav-item><a href="{{ (.GetPage ``).Permalink }}" class="text-3xl">{{ site.Title }}</a></nav-item>
   </nav>
-  <nav class="flex flex-wrap gap-6 py-3 px-6 rounded-full bg-slate-200 drop-shadow">
-    {{ range (index .Site.Menus "main") }}
-      <nav-item>
-        <a href="{{ .URL }}" class="font-sans">{{ .Name | upper }}</a>
+  <nav class="flex flex-wrap gap-1">
+    {{ range site.Menus.main }}
+      <nav-item class="relative">
+        <a href="{{ .URL }}" class="py-3 px-5 font-bold rounded-full {{ if $.Page.IsMenuCurrent .Menu . }}bg-slate-300{{end}}">{{ .Name | title }}</a>
       </nav-item>
     {{ end }}
   </nav>
