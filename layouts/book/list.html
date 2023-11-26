@@ -1,9 +1,9 @@
 {{ define "main" }}
   <div>{{ partial "book-crumbs" . }}</div>
   <div class="mt-6">
-    <h1 class="text-2xl font-bold mb-3">
-      {{ T "toc" . | humanize }}
-    </h1>
+    {{ if gt (len .Ancestors) 1 }}
+      <h1 class="text-2xl font-bold mb-6">{{ .Title }}</h1>
+    {{ end }}
     {{ range sort .Pages ".File.Path" }}
       <a href="{{ .Permalink | safeHTML }}" class="block text-sky-800">{{ .Title }}</a>
     {{ end }}

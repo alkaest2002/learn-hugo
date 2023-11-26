@@ -3,6 +3,7 @@
   {{ $paginator := .Paginate (sort .RegularPages "File.Path") 5 }}
   <div>{{ partial "book-crumbs" . }}</div>
   <div class="mt-6">
+    <h1 class="text-2xl font-bold mb-6">{{ .Title }}</h1>
     {{ range $paginator.Pages }}
       <p>{{ .Title | markdownify }}</p>
     {{ end }}

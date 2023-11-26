@@ -1,11 +1,9 @@
 <div class="flex gap-2">
   {{ $root := T "book_syllabus" | title }}
-  {{- range after 1 .Ancestors.Reverse }}
-    <div>
+  <div class=" border rounded-full bg-slate-200 p-1 px-3">
+    {{- range after 1 .Ancestors.Reverse }}
       <a href="{{ .RelPermalink }}" class="text-sky-800">{{ .Title }}</a> &rsaquo; 
-    </div>
-    {{- end }}
-    <div>
+      {{- end }}
       <span>{{ .LinkTitle }}</span>
-    </div>
+  </div>
 </div>

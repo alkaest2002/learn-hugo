@@ -1,8 +1,8 @@
 <nav class="flex flex-wrap justify-between items-center p-3">
   <nav>
-    <nav-item><a href="{{ (.GetPage ``).Permalink }}" class="text-3xl">{{ site.Title }}</a></nav-item>
+    <nav-item><a href="{{ (.GetPage ``).Permalink }}" class="text-3xl font-bold">{{ site.Title }}</a></nav-item>
   </nav>
-  <nav class="flex flex-wrap gap-1">
+  <nav class="flex flex-wrap">
     {{ range site.Menus.main }}
       {{ $is_active := $.Page.IsMenuCurrent .Menu . | or ($.Page.HasMenuCurrent .Menu .) }}
       <nav-item class="relative">
